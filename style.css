@@ -1,0 +1,174 @@
+/* 全局重置：清除所有元素的默认内边距、外边距、轮廓和边框，并设置统一字体 */
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: 0 ;
+    font-family: "Microsoft YaHei", PingFang SC, sans-serif;  /* 优先使用微软雅黑，备选 PingFang 和无衬线字体 */
+}
+
+/* 页面主体样式：背景图片铺满并居中，采用弹性布局使内容水平垂直居中 */
+body {
+    background-image: url("login-bg.jpg") ;
+    background-repeat: no-repeat;          /* 背景不重复平铺 */
+    background-size: cover;                /* 背景图片覆盖整个视口 */
+    background-position: center;
+    height: 100vh;                         /* 视口高度占满 */
+
+    display: flex;
+    justify-content: center;               /* 水平居中 */
+    align-items: center;                   /* 垂直居中 */
+}
+
+/* 伪元素：在 body 上层添加半透明黑色遮罩，增强文字可读性，并置于背景与内容之间 */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* 半透明黑色，透明度 0.2 */
+    z-index: -1;                           /* 置于 body 内容下方，但位于背景图上方（由于 body 本身无定位，实际作用于伪元素层叠） */
+}
+
+/* 登录表单容器：毛玻璃效果，圆角边框，带阴影，垂直排列子元素 */
+#login-form {
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    flex-direction: column;                /* 纵向排列 */
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明白色基底 */
+    width: 25%;                            /* 占父容器宽度的 25% */
+    padding: 50px 10px;                    /* 上下 50px，左右 10px 内边距 */
+    border-radius: 10px;
+    border: 1px solid #ffffff00;           /* 透明边框，保留占位 */
+    backdrop-filter: blur(10px);           /* 背景模糊 10px，实现毛玻璃 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75); /* 深色阴影增加立体感 */
+}
+
+/* 标题样式：大号白色，带进场动画（从下方移入并淡入） */
+h1 {
+    font-size: 3rem;
+    margin: 0 0 50px;                      /* 下边距 50px 与输入框拉开距离 */
+    color: #ffffff;
+    letter-spacing: 3px;
+
+    animation: reloadA 1s ease-out forwards; /* 应用自定义动画，1秒，缓出，保持最终状态 */
+    opacity: 0;                            /* 初始透明，动画结束后变为 1 */
+    animation-delay: 0.5s;                 /* 延迟 0.5 秒开始 */
+}
+
+/* 输入框的外层容器：带白色边框，弹性布局，内部水平居中，用于包裹图标和输入框 */
+.input-wrap{
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;                   /* 每个输入框之间间距 40px */
+    height: 60px;
+    width: 90%;                            /* 占父容器宽度的 90% */
+    border-radius: 50px;                   /* 圆角胶囊形状 */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.75); /* 白色发光效果 */
+}
+
+/* 第一个输入框容器（用户名）的入场动画单独控制延迟 */
+.in-1 {
+    animation: reloadA 1.2s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.4s;
+}
+
+/* 第二个输入框容器（密码）的入场动画，与 in-1 相同延迟，可保持同步 */
+.in-2 {
+    animation: reloadA 1.2s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.4s;
+}
+
+/* 输入框本身：透明背景，白色文字，左右内边距留出空间 */
+input {
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #ffffff;
+    padding: 5px 25px;                     /* 左右 25px 内边距 */
+}
+
+/* 输入框占位符样式：浅灰色，字体稍大 */
+input::placeholder {
+    color: #ededed;
+    font-size: 1.2rem;
+}
+
+/* 输入框容器内的图标（如用户、锁）样式：白色，右侧留空 */
+.input-wrap i {
+    font-size: 1.2rem;
+    color: #ffffff;
+    padding-right: 25px;                   /* 与右侧边框保持距离 */
+}
+
+/* “记住我”和“忘记密码”行：水平两端对齐，同样带有入场动画 */
+.rem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 40px;
+    animation: reloadA 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+/* 该行内的文字（标签和链接）颜色白色，字号 1.2rem */
+.rem p,
+.rem a {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* 登录按钮：胶囊形状，加粗，悬停时半透明灰色背景过渡 */
+button {
+    width: 90%;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    animation: reloadA 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+/* 按钮悬停效果：背景变为半透明灰色，提升交互反馈 */
+button:hover {
+    background-color: #7e7e7e50;
+}
+
+/* 注册引导文字行：白色，下方留白，同样入场动画 */
+.reg {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    animation: reloadA 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+/* 注册链接（a 标签）加粗并显示手型光标，提示可点击 */
+.reg a {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* 自定义关键帧动画：从下方 200px 处移入并淡出（实际是淡入，初始透明度 0 → 1） */
+@keyframes reloadA {
+    from {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
