@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ELYSIA</title>
+
+<link rel="stylesheet" href="../CSS/style2.css">
+
+</head>
+
+
+<body>
+
+
+<!-- 背景遮罩 -->
+<div class="bg"></div>
+
+
+<!-- 顶部导航 -->
+
+<header>
+
+<div class="logo">
+    ELYSIA
+</div>
+
+
+<nav>
+<a class="active">首页</a>
+<a href="项目.html">项目</a>
+<a href="AI聊天.html">AI聊天</a>
+<a href="照片墙.html">照片墙</a>
+<a href="音乐.html">音乐</a>
+<a href="控制台.html">控制台</a>
+<a href="数据面板.html">数据面板</a>
+<a href="开发工具.html">开发工具</a>
+<a href="个人中心.html">个人中心</a>
+</nav>
+
+</header>
+
+
+
+<main>
+
+
+
+<!-- 搜索框 -->
+
+<div class="search">
+
+🔍 搜寻标题、描述或标签...
+
+</div>
+
+
+
+
+<section class="top">
+
+
+<!-- 个人卡片 -->
+
+<div class="card user">
+
+
+<img src="avatar.jpg">
+
+
+<div>
+
+<h1>
+ELYSIA
+</h1>
+
+<p>
+因你而在的故事
+</p>
+
+
+<div class="number">
+
+<div>
+<b> </b>
+<span>  </span>
+</div>
+
+<div>
+<b> </b>
+<span>  </span>
+</div>
+
+
+<div>
+<b></b>
+<span></span>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="icons">
+
+<button>Github</button>
+<button>G</button>
+<button>Mail</button>
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- 音乐卡 -->
+
+<!-- 音乐播放器 -->
+
+<div class="card music">
+
+
+<div class="music-title">
+CLOUD MUSIC
+</div>
+
+
+<div class="music-info">
+
+
+<img src="../IMG/music.jpg">
+
+
+<div>
+
+<h3>
+TruE
+</h3>
+
+<p>
+黄龄
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<audio id="audio"
+src="../MUSIC/《崩坏3》黄龄 TruE《因你而在的故事》动画短片印象曲.mp3">
+</audio>
+
+
+
+<div class="progress">
+
+<input 
+type="range"
+id="progress"
+value="0"
+min="0"
+max="100">
+
+</div>
+
+
+
+
+<div class="time">
+
+
+<span id="current">
+00:00
+</span>
+
+
+<span id="duration">
+02:40
+</span>
+
+
+</div>
+
+
+
+<button class="play" id="playBtn">
+
+▶
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- 歌词 -->
+
+<div class="lyric">
+
+
+
+</div>
+
+
+
+
+
+
+<!-- 内容区域 -->
+
+<section class="content">
+
+
+
+<div class="article big">
+
+
+<div class="tag">
+
+</div>
+
+
+<h2>
+
+</h2>
+
+
+<p>
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="article banner">
+
+<h2>
+
+</h2>
+
+<p>
+
+</p>
+
+</div>
+
+
+
+
+<div class="article">
+
+
+<h2>
+
+</h2>
+
+<p>
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="card mode">
+
+
+
+<h3>
+
+</h3>
+
+<p>
+
+</p>
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+<!-- 状态栏 -->
+
+<footer>
+
+
+<div class="clock">
+
+<span id="clock">00:00:00</span>
+
+</div>
+
+
+<span>
+</span>
+
+
+<div class="tags">
+
+
+
+</div>
+
+
+</footer>
+
+
+
+</main>
+<script src="../JS/时间.js"></script>
+<script src="../JS/音乐.js"></script>
+</body>
+
+</html>

@@ -9,7 +9,7 @@
 
 /* 页面主体样式：背景图片铺满并居中，采用弹性布局使内容水平垂直居中 */
 body {
-    background-image: url("login-bg.jpg") ;
+    background-image: url("../IMZGE/login-bg.jpg") ;
     background-repeat: no-repeat;          /* 背景不重复平铺 */
     background-size: cover;                /* 背景图片覆盖整个视口 */
     background-position: center;
@@ -127,21 +127,34 @@ input::placeholder {
 }
 
 /* 登录按钮：胶囊形状，加粗，悬停时半透明灰色背景过渡 */
-button {
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 6px 16px;
+    background: #ffffff;
+    color: #020202;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+
     width: 90%;
     height: 60px;
-    border-radius: 50px;
+
     font-size: 1.2rem;
     letter-spacing: 1px;
     font-weight: 600;
-    margin-bottom: 40px;
+
+    margin: 0 auto 40px;
+
     animation: reloadA 1s ease-out forwards;
     opacity: 0;
     animation-delay: 0.5s;
 }
 
 /* 按钮悬停效果：背景变为半透明灰色，提升交互反馈 */
-button:hover {
+.btn:hover {
     background-color: #7e7e7e50;
 }
 
