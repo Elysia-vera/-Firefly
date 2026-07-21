@@ -9,7 +9,7 @@
 
 /* 页面主体样式：背景图片铺满并居中，采用弹性布局使内容水平垂直居中 */
 body {
-    background-image: url("../IMZGE/login-bg.jpg") ;
+    background-image: url("login-bg.jpg") ;
     background-repeat: no-repeat;          /* 背景不重复平铺 */
     background-size: cover;                /* 背景图片覆盖整个视口 */
     background-position: center;
